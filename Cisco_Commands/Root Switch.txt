@@ -1,0 +1,11 @@
+How to Determine Which Switch is the Root?
+
+The root switch is the central switch in a Spanning Tree Protocol (STP) network.
+
+To identify the root switch:
+
+Switch# show spanning-tree
+
+Look for a line starting with Root ID. If your switch is the root, it will state:
+
+This switch is the root.

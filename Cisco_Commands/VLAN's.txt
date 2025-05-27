@@ -1,0 +1,10 @@
+1. VLAN's (Virtual Local Area Networks)
+
+Commando:
+
+Switch(config)# vlan 10
+Switch(config-vlan)# name Sales
+Switch(config)# exit
+Switch(config)# interface fastethernet 0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10

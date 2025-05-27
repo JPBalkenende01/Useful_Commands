@@ -1,0 +1,15 @@
+2. VTP (VLAN Trunking Protocol)
+
+VTP Configuration:
+
+Switch(config)# vtp mode server
+Switch(config)# vtp domain mydomain
+Switch(config)# vtp password mypassword
+
+Modes:
+
+Server: Can create and modify VLANs.
+
+Client: Receives VLAN information from servers.
+
+Transparent: Ignores VTP and applies only local VLANs.

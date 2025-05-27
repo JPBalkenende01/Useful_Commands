@@ -1,0 +1,12 @@
+DHCP Pools are used to automatically assign IP addresses to devices in a network.
+
+Configuring DHCP:
+
+Router(config)# ip dhcp pool VLAN10
+Router(dhcp-config)# network 192.168.10.0 255.255.255.0
+Router(dhcp-config)# default-router 192.168.10.1
+Router(dhcp-config)# dns-server 8.8.8.8
+
+Setting Exclusions:
+
+Router(config)# ip dhcp excluded-address 192.168.10.1 192.168.10.10

@@ -1,0 +1,14 @@
+OSPF (Open Shortest Path First) is a dynamic routing protocol that connects routers in a network.
+
+Basic OSPF Configuration:
+
+
+Router(config)# router ospf 1
+Router(config-router)# network 192.168.10.0 0.0.0.255 area 0
+Router(config-router)# network 192.168.20.0 0.0.0.255 area 0
+
+Important:
+
+Ensure that the wildcard mask matches your subnet.
+
+Area 0 is the backbone of OSPF.
