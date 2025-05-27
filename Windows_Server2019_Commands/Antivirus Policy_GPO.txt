@@ -1,0 +1,40 @@
+1. Ensure Antivirus is Active and Up-to-Date on All Clients and Servers
+Use Microsoft Defender Antivirus:
+
+Verify that Defender Antivirus is active via Windows Security.
+
+Centrally enable and manage Defender using Group Policy or System Center Configuration Manager (SCCM).
+------------------------------------------------------------------------------------------------------
+
+2. Antivirus Updates Must Be No Older Than 24 Hours
+Force frequent updates:
+
+Open the Group Policy Management Console (GPMC).
+
+Navigate to:
+Computer Configuration > Policies > Administrative Templates > Windows Components > Microsoft Defender Antivirus > Security Intelligence Updates.
+
+Configure the setting Define the interval for checking updates to a maximum of 24 hours.
+----------------------------------------------------------------------------------------
+
+3. Antivirus Scans Must Be Performed at Least Twice Weekly
+Schedule regular scans:
+
+Open Task Scheduler.
+
+Create a new task under:
+Task Scheduler Library > Microsoft > Windows > Windows Defender.
+
+Set the scan frequency to twice per week.
+-----------------------------------------
+
+4. Restrict Antivirus Disabling to Domain Administrators
+Restrict access to antivirus settings:
+
+Use Group Policy:
+
+Navigate to:
+Computer Configuration > Policies > Administrative Templates > Windows Components > Microsoft Defender Antivirus.
+
+Enable the setting:
+Prevent users from overriding Microsoft Defender Antivirus settings.

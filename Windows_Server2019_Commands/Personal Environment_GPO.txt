@@ -1,0 +1,24 @@
+1. Prevent Users from Changing Their Background
+Use Group Policy to restrict desktop background changes:
+
+Navigate to:
+User Configuration > Policies > Administrative Templates > Desktop > Desktop.
+
+Enable the setting:
+Prevent changing desktop background.
+------------------------------------
+
+2. Restrict Screensaver Settings
+Use Group Policy to manage screensaver and timeout settings:
+
+Navigate to:
+User Configuration > Policies > Administrative Templates > Control Panel > Personalization.
+
+Enable the following:
+
+Prevent changing screen saver.
+
+Password protect the screen saver.
+
+Set a default screensaver timeout by configuring:
+Screen saver timeout.

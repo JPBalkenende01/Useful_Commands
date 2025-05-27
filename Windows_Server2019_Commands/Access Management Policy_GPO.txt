@@ -1,0 +1,40 @@
+1. Configure Password Requirements
+Set password policies via Group Policy:
+
+Open GPMC > Navigate to:
+Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Password Policy.
+
+Configure the following rules:
+
+Minimum password length: 12 characters.
+
+Enforce password history: 4 previous passwords.
+
+Password must meet complexity requirements: Enable.
+
+Maximum password age: Set as needed.
+
+For advanced complexity (symbols, numbers, etc.):
+Enable Fine-Grained Password Policy via Active Directory Administrative Center.
+-------------------------------------------------------------------------------
+
+2. Restrict Login to Specific Time Frames
+Set login hours via Active Directory:
+
+Open Active Directory Users and Computers (ADUC).
+
+Find the user > Right-click > Properties > Account tab > Logon Hours.
+
+Define allowed hours according to the specified schedule.
+---------------------------------------------------------
+
+3. Restrict Access to Server Data
+Configure NTFS Permissions:
+
+Right-click on a folder > Properties > Security tab.
+
+Adjust permissions:
+
+Home Directory: Only the user has access.
+
+Other Folders: Grant access to everyone, if necessary.
