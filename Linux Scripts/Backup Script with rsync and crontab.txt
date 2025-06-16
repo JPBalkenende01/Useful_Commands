@@ -1,0 +1,31 @@
+Backup Script with rsync and crontab
+
+Explanation: This script makes a backup of a folder to an external location with rsync. You can run this periodically via a cronjob.
+
+Script:
+
+#!/bin/bash
+SOURCE_DIR="/path/to/source"
+DEST_DIR="/path/to/destination"
+LOG_FILE="/var/log/backup.log"
+
+rsync -av --delete "$SOURCE_DIR" "$DEST_DIR" >> "$LOG_FILE" 2>&1
+
+Implementation:
+Make script executable:
+
+chmod +x backup.sh
+
+Add to crontab:
+Open crontab with crontab -e and add:
+
+0 2 * * * /path/to/backup.sh
+This runs the backup every night at 2:00 AM.
+
+
+Note:
+Adjust SOURCE_DIR and DEST_DIR to your environment.
+
+Make sure the user has sufficient rights on both directories.
+
+Check the log file regularly.

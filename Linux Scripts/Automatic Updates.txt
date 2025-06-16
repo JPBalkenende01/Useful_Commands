@@ -1,0 +1,26 @@
+Automatic Updates
+Description: This script updates system packages using zypper and logs the output.
+
+Script:
+
+#!/bin/bash
+LOG_FILE="/var/log/auto_update.log"
+
+echo "=== $(date) ===" >> $LOG_FILE
+zypper refresh >> $LOG_FILE 2>&1
+zypper update -y >> $LOG_FILE 2>&1
+echo "==================" >> $LOG_FILE
+
+Implementation:
+Make the script executable:
+
+chmod 770 auto_update.sh
+
+Add to crontab for weekly execution:
+
+0 3 * * 1 /path/to/auto_update.sh
+
+Notes:
+Only run as a user with sufficient privileges (e.g., root or sudo).
+
+Review the log file for details of installed updates.

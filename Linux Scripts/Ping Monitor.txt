@@ -1,0 +1,28 @@
+Ping Monitor
+Description: This script checks if a server is reachable using ping and provides a warning if unreachable.
+
+Script:
+
+#!/bin/bash
+SERVER="google.com"
+ping -c 2 "$SERVER" > /dev/null
+
+if [ $? -ne 0 ]; then
+    echo "Warning: $SERVER is not reachable!"
+else
+    echo "$SERVER is online."
+fi
+
+Implementation:
+Make the script executable:
+
+chmod 770 ping_monitor.sh
+
+Run it manually or add it to crontab:
+
+*/10 * * * * /path/to/ping_monitor.sh
+
+Notes:
+Replace google.com with the hostname or IP of the server you want to monitor.
+
+Combine this script with an email alert system for real-time notifications.

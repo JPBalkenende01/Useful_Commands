@@ -1,0 +1,35 @@
+Addition or Multiplication Script
+
+Explanation: This script asks the user for two numbers and a choice between addition or multiplication.
+
+Script:
+
+#!/bin/bash
+echo "Enter first number:"
+read num1
+echo "Enter second number:"
+read num2
+echo "Choose operation (addition: +, multiplication: *):"
+read op
+
+if [ "$op" == "+" ]; then
+    echo "Result: $((num1 + num2))"
+elif [ "$op" == "*" ]; then
+    echo "Result: $((num1 * num2))"
+else
+    echo "Invalid operation"
+fi
+
+Implementation:
+Make script executable:
+
+chmod 770 calculator.sh
+
+Run the script in the terminal:
+
+./calculator.sh
+
+Note:
+Enter only numeric values.
+
+Check for syntax errors if the script does not work.

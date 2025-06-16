@@ -1,0 +1,29 @@
+Log Rotation Script
+Description: This script archives log files older than 7 days to save disk space.
+
+Script:
+
+#!/bin/bash
+LOG_DIR="/var/log/myapp/"
+ARCHIVE_DIR="/var/log/myapp/archive/"
+
+find "$LOG_DIR" -name "*.log" -mtime +7 -exec mv {} "$ARCHIVE_DIR" \;
+
+Implementation:
+
+Create an archive directory:
+
+mkdir -p /var/log/myapp/archive
+
+Make the script executable:
+
+chmod 770 log_rotate.sh
+
+Run it manually or schedule it with crontab:
+
+0 1 * * * /path/to/log_rotate.sh
+
+Notes:
+Ensure proper permissions for both LOG_DIR and ARCHIVE_DIR.
+
+Test it by manually creating some old logs and running the script.

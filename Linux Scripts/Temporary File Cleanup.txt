@@ -1,0 +1,22 @@
+Temporary File Cleanup
+Description: This script removes files in /tmp older than 7 days.
+
+Script:
+
+#!/bin/bash
+find /tmp -type f -mtime +7 -exec rm -f {} \;
+echo "Old temporary files cleaned up."
+
+Implementation:
+Make the script executable:
+
+chmod 770 cleanup_tmp.sh
+
+Schedule it via crontab for daily execution:
+
+0 4 * * * /path/to/cleanup_tmp.sh
+
+Notes:
+Test with dummy files before running in production.
+
+Ensure no critical files are stored in /tmp.

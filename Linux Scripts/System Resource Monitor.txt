@@ -1,0 +1,26 @@
+System Resource Monitor
+Description: This script logs CPU and RAM usage to a file for later analysis.
+
+Script:
+
+#!/bin/bash
+LOG_FILE="/var/log/system_monitor.log"
+
+echo "=== $(date) ===" >> $LOG_FILE
+echo "CPU Usage: $(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')%" >> $LOG_FILE
+echo "RAM Usage: $(free -m | awk '/Mem:/ { printf("%.2f"), $3/$2 * 100 }')%" >> $LOG_FILE
+echo "==================" >> $LOG_FILE
+
+Implementation:
+Make the script executable:
+
+chmod 770 system_monitor.sh
+
+Add to crontab to log data every hour:
+
+0 * * * * /path/to/system_monitor.sh
+
+Notes:
+Ensure the log directory (/var/log/) is writable by the user running the script.
+
+Use tail -f /var/log/system_monitor.log to monitor the log in real-time.

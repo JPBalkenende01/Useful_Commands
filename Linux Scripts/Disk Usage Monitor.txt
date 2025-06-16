@@ -1,0 +1,30 @@
+Disk Usage Monitor
+Description: This script checks disk usage of the root directory (/). If usage exceeds a defined threshold, it sends a warning message.
+
+Script:
+
+#!/bin/bash
+THRESHOLD=80
+USAGE=$(df / | grep / | awk '{print $5}' | sed 's/%//')
+
+if [ "$USAGE" -gt "$THRESHOLD" ]; then
+    echo "Warning: Disk usage is ${USAGE}%"
+else
+    echo "Disk usage is normal: ${USAGE}%"
+fi
+
+Implementation:
+Make the script executable:
+
+chmod 770 disk_usage_check.sh
+
+Run the script manually or add to crontab:
+
+*/30 * * * * /path/to/disk_usage_check.sh
+
+This will check disk usage every 30 minutes.
+
+Notes:
+Adjust the THRESHOLD variable to your desired warning level.
+
+Test the script to confirm the output matches expectations.
